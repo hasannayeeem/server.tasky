@@ -19,6 +19,12 @@ async function run(){
             const todos = await cursor.toArray();
             res.send(todos);
         });
+        //POST
+        app.post('/todo', async (req, res) => {
+            const newTodo = req.body;
+            const result = await toDoCollection.insertOne(newTodo);
+            res.send(result)
+        });
     }
     finally{
 
