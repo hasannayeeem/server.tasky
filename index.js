@@ -20,7 +20,7 @@ async function run() {
             res.send(todos);
         });
         //POST
-        app.post('/todo', async (req, res) => {
+        app.post('/todos', async (req, res) => {
             const newTodo = req.body;
             const result = await toDoCollection.insertOne(newTodo);
             res.send(result)
