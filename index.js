@@ -13,12 +13,12 @@ async function run() {
         await client.connect();
         const toDoCollection = client.db('tasky').collection('todos');
         // all todos api
-        app.get('/todos', async (req, res) => {
-            const query = {};
-            const cursor = toDoCollection.find(query);
-            const todos = await cursor.toArray();
-            res.send(todos);
-        });
+        // app.get('/todos', async (req, res) => {
+        //     const query = {};
+        //     const cursor = toDoCollection.find(query);
+        //     const todos = await cursor.toArray();
+        //     res.send(todos);
+        // });
         //POST
         app.post('/todos', async (req, res) => {
             const newTodo = req.body;
